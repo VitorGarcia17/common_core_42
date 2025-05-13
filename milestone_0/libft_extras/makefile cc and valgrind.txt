@@ -1,0 +1,6 @@
+
+cc:
+	cc -lbsd mymain.c libft.a
+
+val: 
+	valgrind ./a.out
