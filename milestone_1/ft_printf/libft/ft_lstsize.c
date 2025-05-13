@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vipinhei <vipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 14:06:48 by vipinhei          #+#    #+#             */
-/*   Updated: 2025/05/13 19:04:02 by vipinhei         ###   ########.fr       */
+/*   Created: 2025/05/06 15:26:38 by vipinhei          #+#    #+#             */
+/*   Updated: 2025/05/08 15:57:10 by vipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* ft_memcpy: Copies n bytes from memory area src to dest. */
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+/* ft_lstsize: Returns the number of nodes in the linked list. */
+int	ft_lstsize(t_list *lst)
 {
-	size_t	i;
-	char	*s;
-	char	*d;
+	t_list	*size_list;
+	int		i;
 
-	if (!dest && !src)
-		return (NULL);
-	s = (char *)src;
-	d = (char *)dest;
+	size_list = lst;
 	i = 0;
-	while (i < n)
+	while (size_list != NULL)
 	{
-		d[i] = s[i];
 		i++;
+		size_list = size_list->next;
 	}
-	return (d);
+	return (i);
 }

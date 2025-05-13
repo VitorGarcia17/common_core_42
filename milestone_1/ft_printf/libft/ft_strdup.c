@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vipinhei <vipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 14:06:48 by vipinhei          #+#    #+#             */
-/*   Updated: 2025/05/13 19:04:02 by vipinhei         ###   ########.fr       */
+/*   Created: 2025/04/22 13:12:03 by vipinhei          #+#    #+#             */
+/*   Updated: 2025/04/22 18:51:15 by vipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* ft_memcpy: Copies n bytes from memory area src to dest. */
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+/* ft_strdup: Returns a duplicate of the string s (allocated with malloc). */
+char	*ft_strdup(const char *s)
 {
+	char	*mem_temp;
 	size_t	i;
-	char	*s;
-	char	*d;
 
-	if (!dest && !src)
+	mem_temp = (char *) malloc(ft_strlen(s) + 1);
+	if (!mem_temp)
 		return (NULL);
-	s = (char *)src;
-	d = (char *)dest;
 	i = 0;
-	while (i < n)
+	while (s[i] != '\0')
 	{
-		d[i] = s[i];
+		mem_temp[i] = s[i];
 		i++;
 	}
-	return (d);
+	mem_temp[i] = '\0';
+	return (mem_temp);
 }

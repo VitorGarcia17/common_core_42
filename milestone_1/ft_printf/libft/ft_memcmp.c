@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vipinhei <vipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 14:06:48 by vipinhei          #+#    #+#             */
-/*   Updated: 2025/05/13 19:04:02 by vipinhei         ###   ########.fr       */
+/*   Created: 2025/04/09 16:04:02 by vipinhei          #+#    #+#             */
+/*   Updated: 2025/05/08 17:11:26 by vipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* ft_memcpy: Copies n bytes from memory area src to dest. */
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+/* ft_memcmp: Compares two memory areas byte-by-byte. */
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
-	char	*s;
-	char	*d;
+	size_t				i;
+	const unsigned char	*str1;
+	const unsigned char	*str2;
 
-	if (!dest && !src)
-		return (NULL);
-	s = (char *)src;
-	d = (char *)dest;
 	i = 0;
+	str1 = (unsigned char *) s1;
+	str2 = (unsigned char *) s2;
 	while (i < n)
 	{
-		d[i] = s[i];
+		if (str1[i] != str2[i])
+			return (str1[i] - str2[i]);
 		i++;
 	}
-	return (d);
+	return (0);
 }

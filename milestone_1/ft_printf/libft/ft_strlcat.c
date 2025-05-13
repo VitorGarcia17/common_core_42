@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vipinhei <vipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 14:06:48 by vipinhei          #+#    #+#             */
-/*   Updated: 2025/05/13 19:04:02 by vipinhei         ###   ########.fr       */
+/*   Created: 2025/04/09 16:01:49 by vipinhei          #+#    #+#             */
+/*   Updated: 2025/05/08 17:54:20 by vipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* ft_memcpy: Copies n bytes from memory area src to dest. */
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+/* ft_strlcat: Appends string src to dst,
+	       writing at most size - strlen(dst) - 1 bytes. */
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
-	char	*s;
-	char	*d;
+	size_t	l_dst;
+	size_t	l_src;
 
-	if (!dest && !src)
-		return (NULL);
-	s = (char *)src;
-	d = (char *)dest;
+	l_dst = ft_strlen(dst);
+	l_src = ft_strlen(src);
 	i = 0;
-	while (i < n)
+	if (size == 0)
+		return (l_src);
+	while ((l_dst + i) < (size - 1) && src[i] != '\0')
 	{
-		d[i] = s[i];
+		dst[l_dst + i] = src[i];
 		i++;
 	}
-	return (d);
+	dst[l_dst + i] = '\0';
+	if (l_dst >= size)
+		return (size + l_src);
+	else
+		return (l_dst + l_src);
 }

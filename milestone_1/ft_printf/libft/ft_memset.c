@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vipinhei <vipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 14:06:48 by vipinhei          #+#    #+#             */
-/*   Updated: 2025/05/13 19:04:02 by vipinhei         ###   ########.fr       */
+/*   Created: 2025/04/08 14:16:22 by vipinhei          #+#    #+#             */
+/*   Updated: 2025/05/08 16:52:09 by vipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* ft_memcpy: Copies n bytes from memory area src to dest. */
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+/* ft_memset: Fills a block of memory with a constant byte (c) for n bytes. */
+void	*ft_memset(void *s, int c, size_t n)
 {
 	size_t	i;
-	char	*s;
-	char	*d;
+	char	*str;
 
-	if (!dest && !src)
-		return (NULL);
-	s = (char *)src;
-	d = (char *)dest;
+	str = (char *)s;
 	i = 0;
 	while (i < n)
 	{
-		d[i] = s[i];
+		str[i] = c;
 		i++;
 	}
-	return (d);
+	return (str);
 }

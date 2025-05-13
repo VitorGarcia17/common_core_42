@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vipinhei <vipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 14:06:48 by vipinhei          #+#    #+#             */
-/*   Updated: 2025/05/13 19:04:02 by vipinhei         ###   ########.fr       */
+/*   Created: 2025/05/06 17:24:50 by vipinhei          #+#    #+#             */
+/*   Updated: 2025/05/08 15:53:53 by vipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* ft_memcpy: Copies n bytes from memory area src to dest. */
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+/* ft_lstiter: Iterates over the list and applies function f
+	       to each node's content. */
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	size_t	i;
-	char	*s;
-	char	*d;
+	t_list	*iter_list;
 
-	if (!dest && !src)
-		return (NULL);
-	s = (char *)src;
-	d = (char *)dest;
-	i = 0;
-	while (i < n)
+	iter_list = lst;
+	while (iter_list != NULL)
 	{
-		d[i] = s[i];
-		i++;
+		f(iter_list->content);
+		iter_list = iter_list->next;
 	}
-	return (d);
 }

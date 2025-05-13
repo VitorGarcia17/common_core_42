@@ -6,7 +6,7 @@
 /*   By: vipinhei <vipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 14:57:37 by vipinhei          #+#    #+#             */
-/*   Updated: 2025/05/13 13:25:38 by vipinhei         ###   ########.fr       */
+/*   Updated: 2025/05/13 15:19:03 by vipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -952,48 +952,48 @@ void tst_ft_lstmap()
 int main(void)
 {
 	// PART 1
-	// tst_ft_isalpha();
-	// tst_ft_isdigit();
-	// tst_ft_isalnum();
-	// tst_ft_isascii();
-	// tst_ft_isprint();
-	// tst_ft_strlen();
-	// tst_ft_memset();
-	// tst_ft_bzero();
-	// tst_ft_tolower();
-	// tst_ft_toupper();
-	// tst_ft_atoi();
-	// tst_ft_memcmp();
-	// tst_ft_strrchr();
-	// tst_ft_strchr();
-	// tst_ft_strnstr();
-	// tst_ft_strncmp();
-	// tst_ft_strlcpy();
-	// tst_ft_strlcat();
-	// tst_ft_memcpy();
-	// tst_ft_memmove();
-	// tst_ft_memchr();
-	// tst_ft_calloc();
-	// tst_ft_strdup();
+	tst_ft_isalpha();
+	tst_ft_isdigit();
+	tst_ft_isalnum();
+	tst_ft_isascii();
+	tst_ft_isprint();
+	tst_ft_strlen();
+	tst_ft_memset();
+	tst_ft_bzero();
+	tst_ft_tolower();
+	tst_ft_toupper();
+	tst_ft_atoi();
+	tst_ft_memcmp();
+	tst_ft_strrchr();
+	tst_ft_strchr();
+	tst_ft_strnstr();
+	tst_ft_strncmp();
+	tst_ft_strlcpy();
+	tst_ft_strlcat();
+	tst_ft_memcpy();
+	tst_ft_memmove();
+	tst_ft_memchr();
+	tst_ft_calloc();
+	tst_ft_strdup();
 
 	// PART 2
-	// tst_ft_substr();
-	// tst_ft_strjoin();
-	// tst_ft_strtrim();
+	 tst_ft_substr();
+	 tst_ft_strjoin();
+	 tst_ft_strtrim();
 	tst_ft_split();
-	// tst_ft_itoa();
-	// tst_ft_putchar_fd();
-	// tst_ft_putstr_fd();
-	// tst_ft_putnbr_fd();
-	// tst_ft_putendl_fd();
-	// tst_ft_strmapi();
-	// tst_ft_striteri();
+	 tst_ft_itoa();
+	 tst_ft_putchar_fd();
+	 tst_ft_putstr_fd();
+	 tst_ft_putnbr_fd();
+	 tst_ft_putendl_fd();
+	 tst_ft_strmapi();
+	 tst_ft_striteri();
 
 	// PART BONUS
-	// tst_ft_lstnew();
-	// tst_ft_lstadd_front();
-	// tst_ft_lstsize();
-	// tst_ft_lstadd_back();
+	 tst_ft_lstnew();
+	 tst_ft_lstadd_front();
+	 tst_ft_lstsize();
+	 tst_ft_lstadd_back();
 
 	// tst_ft_lstdelone();
 	// tst_ft_lstclear();

@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vipinhei <vipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 14:06:48 by vipinhei          #+#    #+#             */
-/*   Updated: 2025/05/13 19:04:02 by vipinhei         ###   ########.fr       */
+/*   Created: 2025/04/09 16:01:24 by vipinhei          #+#    #+#             */
+/*   Updated: 2025/05/08 17:46:03 by vipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* ft_memcpy: Copies n bytes from memory area src to dest. */
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+/* ft_strlcpy: Copies up to size - 1 characters from src to dst,
+	       NUL-terminating the result if size is not 0. */
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
-	char	*s;
-	char	*d;
+	size_t	l_src;
 
-	if (!dest && !src)
-		return (NULL);
-	s = (char *)src;
-	d = (char *)dest;
 	i = 0;
-	while (i < n)
+	l_src = ft_strlen(src);
+	if (size == 0)
+		return (l_src);
+	while (src[i] != 0 && i < size - 1)
 	{
-		d[i] = s[i];
+		dst[i] = src[i];
 		i++;
 	}
-	return (d);
+	dst[i] = '\0';
+	return (l_src);
 }

@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vipinhei <vipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 14:06:48 by vipinhei          #+#    #+#             */
-/*   Updated: 2025/05/13 19:04:02 by vipinhei         ###   ########.fr       */
+/*   Created: 2025/04/09 15:29:35 by vipinhei          #+#    #+#             */
+/*   Updated: 2025/05/08 18:28:14 by vipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* ft_memcpy: Copies n bytes from memory area src to dest. */
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+/* ft_strncmp: Compares up to n characters of s1 and s2. */
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
-	char	*s;
-	char	*d;
 
-	if (!dest && !src)
-		return (NULL);
-	s = (char *)src;
-	d = (char *)dest;
 	i = 0;
-	while (i < n)
+	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
 	{
-		d[i] = s[i];
+		if ((unsigned char)s1[i] != (unsigned char)s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 		i++;
 	}
-	return (d);
+	if (i < n)
+		return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	return (0);
 }

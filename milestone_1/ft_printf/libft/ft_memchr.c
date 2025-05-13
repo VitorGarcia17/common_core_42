@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vipinhei <vipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 14:06:48 by vipinhei          #+#    #+#             */
-/*   Updated: 2025/05/13 19:04:02 by vipinhei         ###   ########.fr       */
+/*   Created: 2025/04/09 16:03:38 by vipinhei          #+#    #+#             */
+/*   Updated: 2025/05/09 17:02:08 by vipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* ft_memcpy: Copies n bytes from memory area src to dest. */
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+/* ft_memchr: Scans memory for the first occurrence of a given character. */
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t	i;
-	char	*s;
-	char	*d;
+	char	*str;
+	char	cc;
 
-	if (!dest && !src)
-		return (NULL);
-	s = (char *)src;
-	d = (char *)dest;
+	str = (char *) s;
+	cc = (char) c;
 	i = 0;
 	while (i < n)
 	{
-		d[i] = s[i];
+		if (cc == str[i])
+			return ((char *) str + i);
 		i++;
 	}
-	return (d);
+	return (NULL);
 }

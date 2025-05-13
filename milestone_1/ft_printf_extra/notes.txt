@@ -1,0 +1,24 @@
+
+-> functions should not quit unexpectedly (segmentation fault, bus error, double free, etc.) except for undefined behavior
+-> All heap-allocated memory must be properly freed when necessary
+-> Makefile if necessary
+	-Wall, -Wextra, -Werror
+	$(NAME), all, clean, fclean, re
+
+
+-> variadic functions
+	va_list → Cria uma lista de argumentos variáveis.
+	va_start(args, format) → Inicializa a lista de argumentos.
+	va_arg(args, tipo) → Obtém o próximo argumento.
+	va_end(args) → Finaliza a lista de argumentos.
+
+-> Do not implement the original printf()’s buffer management
+
+%c → Caractere único (char)
+%s → String (char *)
+%p → Ponteiro (endereço de memória)
+%d / i → Inteiro decimal (int)
+%u → Inteiro sem sinal (unsigned int)
+%x → Inteiro hexadecimal em minúsculas (unsigned int)
+%X → Inteiro hexadecimal em maiúsculas (unsigned int)
+%% → Imprime o próprio caractere % (não é uma conversão, apenas um literal)

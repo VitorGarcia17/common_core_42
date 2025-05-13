@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vipinhei <vipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 14:06:48 by vipinhei          #+#    #+#             */
-/*   Updated: 2025/05/13 19:04:02 by vipinhei         ###   ########.fr       */
+/*   Created: 2025/05/06 15:37:00 by vipinhei          #+#    #+#             */
+/*   Updated: 2025/05/06 17:43:29 by vipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* ft_memcpy: Copies n bytes from memory area src to dest. */
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+/* ft_lstlast: Returns the last node of the linked list. */
+t_list	*ft_lstlast(t_list *lst)
 {
-	size_t	i;
-	char	*s;
-	char	*d;
+	t_list	*last_list;
 
-	if (!dest && !src)
+	if (!lst)
 		return (NULL);
-	s = (char *)src;
-	d = (char *)dest;
-	i = 0;
-	while (i < n)
+	last_list = lst;
+	while (last_list->next != NULL)
 	{
-		d[i] = s[i];
-		i++;
+		last_list = last_list->next;
 	}
-	return (d);
+	return (last_list);
 }

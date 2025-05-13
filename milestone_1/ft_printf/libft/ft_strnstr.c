@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vipinhei <vipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 14:06:48 by vipinhei          #+#    #+#             */
-/*   Updated: 2025/05/13 19:04:02 by vipinhei         ###   ########.fr       */
+/*   Created: 2025/04/09 16:04:22 by vipinhei          #+#    #+#             */
+/*   Updated: 2025/05/12 16:54:06 by vipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* ft_memcpy: Copies n bytes from memory area src to dest. */
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+/* ft_strnstr: Locates the first occurrence of little in big
+	       (within len characters). */
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
-	char	*s;
-	char	*d;
+	size_t	l_len;
 
-	if (!dest && !src)
-		return (NULL);
-	s = (char *)src;
-	d = (char *)dest;
 	i = 0;
-	while (i < n)
+	if (*little == '\0')
+		return ((char *) big);
+	l_len = ft_strlen(little);
+	while (i < len && big[i] != '\0')
 	{
-		d[i] = s[i];
+		if (l_len > len)
+			return (NULL);
+		if (ft_strncmp((char *)&big[i], little, l_len) == 0 && i + l_len <= len)
+			return ((char *)&big[i]);
 		i++;
 	}
-	return (d);
+	return (NULL);
 }

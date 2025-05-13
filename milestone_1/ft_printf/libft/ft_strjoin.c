@@ -1,33 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vipinhei <vipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 14:06:48 by vipinhei          #+#    #+#             */
-/*   Updated: 2025/05/13 19:04:02 by vipinhei         ###   ########.fr       */
+/*   Created: 2025/04/22 14:14:03 by vipinhei          #+#    #+#             */
+/*   Updated: 2025/04/22 18:51:31 by vipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* ft_memcpy: Copies n bytes from memory area src to dest. */
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+/* ft_strjoin: Concatenates strings s1 and s2 into a new string. */
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
-	char	*s;
-	char	*d;
+	char	*mem_temp;
+	int		i;
+	int		j;
 
-	if (!dest && !src)
+	mem_temp = (char *) malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!mem_temp)
 		return (NULL);
-	s = (char *)src;
-	d = (char *)dest;
 	i = 0;
-	while (i < n)
+	while (s1[i] != '\0')
 	{
-		d[i] = s[i];
+		mem_temp[i] = s1[i];
 		i++;
 	}
-	return (d);
+	j = 0;
+	while (s2[j] != '\0')
+	{
+		mem_temp[i + j] = s2[j];
+		j++;
+	}
+	mem_temp[i + j] = '\0';
+	return (mem_temp);
 }

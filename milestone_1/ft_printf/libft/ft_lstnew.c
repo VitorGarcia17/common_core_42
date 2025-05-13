@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vipinhei <vipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 14:06:48 by vipinhei          #+#    #+#             */
-/*   Updated: 2025/05/13 19:04:02 by vipinhei         ###   ########.fr       */
+/*   Created: 2025/04/30 18:12:45 by vipinhei          #+#    #+#             */
+/*   Updated: 2025/05/08 18:30:18 by vipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* ft_memcpy: Copies n bytes from memory area src to dest. */
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+/* ft_lstnew: Allocates and returns a new node with the given content. */
+t_list	*ft_lstnew(void *content)
 {
-	size_t	i;
-	char	*s;
-	char	*d;
+	t_list	*new_list;
 
-	if (!dest && !src)
+	new_list = malloc(sizeof(t_list));
+	if (!new_list)
 		return (NULL);
-	s = (char *)src;
-	d = (char *)dest;
-	i = 0;
-	while (i < n)
-	{
-		d[i] = s[i];
-		i++;
-	}
-	return (d);
+	new_list->content = content;
+	new_list->next = NULL;
+	return (new_list);
 }
