@@ -6,7 +6,7 @@
 /*   By: vipinhei <vipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 15:45:52 by vipinhei          #+#    #+#             */
-/*   Updated: 2025/05/14 00:56:27 by vipinhei         ###   ########.fr       */
+/*   Updated: 2025/05/14 19:32:42 by vipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	printf_char(char c);
 int	printf_str(char *s);
 int	printf_di(int n);
 int	printf_unsi(unsigned int n);
+int	printf_hexl(int n);
+int	printf_hexu(int n);
 
 
 #endif

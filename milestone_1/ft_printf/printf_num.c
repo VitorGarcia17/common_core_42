@@ -6,7 +6,7 @@
 /*   By: vipinhei <vipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 00:38:41 by vipinhei          #+#    #+#             */
-/*   Updated: 2025/05/14 01:29:12 by vipinhei         ###   ########.fr       */
+/*   Updated: 2025/05/14 18:36:14 by vipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	printf_di(int n)
 	free(str_nbr);
 	return (len_nbr);
 }
+
 static void	putnbr_unsi(unsigned int n)
 {
 	if (n > 9)
@@ -38,9 +39,9 @@ int	printf_unsi(unsigned int n)
 {
 	int				len_nbr;
 	unsigned int	temp_nbr;
-	char 			*c;
 
 	temp_nbr = n;
+	len_nbr = 0;
 	while (temp_nbr > 0)
 	{
 		temp_nbr = temp_nbr / 10;

@@ -6,7 +6,7 @@
 /*   By: vipinhei <vipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 18:17:18 by vipinhei          #+#    #+#             */
-/*   Updated: 2025/05/13 13:48:00 by vipinhei         ###   ########.fr       */
+/*   Updated: 2025/05/14 15:22:08 by vipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ static char	*create_words(const char *s, char c, size_t *j)
 		end++;
 	if (end > start)
 		str = ft_substr(s, start, end - start);
+	else
+		str = NULL;
 	*j = end + 1;
 	return (str);
 }

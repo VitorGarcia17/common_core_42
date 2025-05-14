@@ -6,11 +6,12 @@
 /*   By: vipinhei <vipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 15:42:07 by vipinhei          #+#    #+#             */
-/*   Updated: 2025/05/14 01:29:40 by vipinhei         ###   ########.fr       */
+/*   Updated: 2025/05/14 19:57:54 by vipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 /* checa a string de formato para saber qual funcao de tratamento chamar */
 static int	format_check(char c, va_list args)
@@ -25,8 +26,10 @@ static int	format_check(char c, va_list args)
 		return (printf_unsi(va_arg(args, unsigned int)));
 	else if (c == 'p')
 		return (printf_ptr(va_arg(args, void *)));
-	else if (c == 'x' || c == 'X')
-		return (printf_hex(va_arg(args, int)));
+	else if (c == 'x')
+		return (printf_hexl(va_arg(args, int)));
+	else if (c == 'X')
+		return (printf_hexu(va_arg(args, int)));
 	else if (c == '%')
 		return (printf_char('%'));
 	else
@@ -67,3 +70,26 @@ int	ft_printf(const char *format, ...)
 // va_start(args, format); // Inicializa a lista com o último parâmetro nomeado.
 // int num = va_arg(args, int); // Obtém o próximo argumento da pilha, do tipo int
 // va_end(args); // Finaliza o uso da lista
+
+int main(void)
+{
+	int nbr;
+
+
+	nbr = printf("c = %c\n", 'v');
+	printf("Char Imprited: %i\n\n", nbr);
+	
+	nbr = ft_printf("c = %c\n", 'v');
+	ft_printf("Char Imprited: %i\n\n", nbr);
+	nbr = ft_printf("s = %s\n", "string");
+	ft_printf("Char Imprited: %i\n\n", nbr);
+	nbr = ft_printf("d = %d, i = %i\n", 123456, 123456);
+	ft_printf("Char Imprited: %i\n\n", nbr);
+	nbr = ft_printf("u = %u\n", 123456);
+	ft_printf("Char Imprited: %i\n\n", nbr);
+	nbr = ft_printf("x = %x, X = %X\n", 123456, 123456);
+	ft_printf("Char Imprited: %i\n\n", nbr);
+	nbr = ft_printf("%% = %%\n");
+	ft_printf("Char Imprited: %i\n\n", nbr);
+	return (0);
+}
